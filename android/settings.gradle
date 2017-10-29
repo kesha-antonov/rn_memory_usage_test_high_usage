@@ -1,0 +1,53 @@
+rootProject.name = 'rn_memory_usage_test_high_usage'
+include ':react-native-billing'
+project(':react-native-billing').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-billing/android')
+include ':react-native-appmetrica'
+project(':react-native-appmetrica').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-appmetrica/android')
+include ':react-native-splash-screen'
+project(':react-native-splash-screen').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-splash-screen/android')
+include ':react-native-fbsdk'
+project(':react-native-fbsdk').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-fbsdk/android')
+include ':react-native-firebase-analytics'
+project(':react-native-firebase-analytics').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-firebase-analytics/android')
+include ':react-native-blur'
+project(':react-native-blur').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-blur/android')
+include ':react-native-sentry'
+project(':react-native-sentry').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-sentry/android')
+include ':gl-react-native'
+project(':gl-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/gl-react-native/android')
+include ':react-native-android-keyboard-adjust'
+project(':react-native-android-keyboard-adjust').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-android-keyboard-adjust/android')
+include ':react-native-exif'
+project(':react-native-exif').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-exif/android')
+include ':react-native-maps'
+project(':react-native-maps').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-maps/lib/android')
+include ':react-native-fs'
+project(':react-native-fs').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-fs/android')
+include ':react-native-vector-icons'
+project(':react-native-vector-icons').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-vector-icons/android')
+include ':react-native-push-notification'
+project(':react-native-push-notification').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-push-notification/android')
+include ':react-native-video'
+project(':react-native-video').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-video/android')
+include ':react-native-image-resizer'
+project(':react-native-image-resizer').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-image-resizer/android')
+include ':react-native-idle-timer'
+project(':react-native-idle-timer').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-idle-timer/android')
+include ':react-native-device-info'
+project(':react-native-device-info').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-device-info/android')
+include ':react-native-camera'
+project(':react-native-camera').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-camera/android')
+include ':app', ':react-native-i18n'
+project(':react-native-i18n').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-i18n/android')
+include ':react-native-video-processing'
+project(':react-native-video-processing').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-video-processing/android')
+include ':react-native-orientation', ':app'
+project(':react-native-orientation').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-orientation/android')
+include ':react-native-open-settings'
+project(':react-native-open-settings').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-open-settings/android')
+
+include ':app'
+
+// include ':ReactAndroid'
+// project(':ReactAndroid').projectDir = new File(
+//    rootProject.projectDir, '../node_modules/react-native/ReactAndroid')

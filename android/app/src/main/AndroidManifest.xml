@@ -1,0 +1,126 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rn_memory_usage_test_high_usage"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-feature android:name="android.hardware.screen.portrait"/>
+
+    <uses-feature android:name="android.hardware.camera2" android:required="false" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+    <uses-feature android:name="android.hardware.location.network" android:required="false" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.INTERNET" android:required="false" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature android:glEsVersion="0x00020000" android:required="false" />
+
+    <permission
+      android:name="${applicationId}.permission.C2D_MESSAGE"
+      android:protectionLevel="signature"
+    />
+    <uses-permission android:name="${applicationId}.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="25" />
+
+    <application
+      android:name=".MainApplication"
+      android:allowBackup="true"
+      android:label="@string/app_name"
+      android:icon="@mipmap/ic_launcher"
+      android:hardwareAccelerated="true"
+      android:theme="@style/AppTheme">
+      <activity
+        android:name=".MainActivity"
+        android:label="@string/app_name"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+        android:windowSoftInputMode="adjustResize"
+        android:screenOrientation="sensorPortrait"
+      >
+        <intent-filter>
+          <action android:name="android.intent.action.MAIN" />
+          <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        <!-- NOTE: TO OPEN BY TAPPING PUSH  -->
+        <intent-filter>
+          <action android:name="OPEN_MainActivity" />
+          <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+        <!-- NOTE: TO OPEN AUTHORIZE WITH SOCIALS  -->
+        <intent-filter>
+          <action android:name="android.intent.action.VIEW" />
+          <category android:name="android.intent.category.DEFAULT" />
+          <category android:name="android.intent.category.BROWSABLE" />
+          <data android:scheme="myappname" />
+          <data android:scheme="fbmyid" />
+          <data android:scheme="vkmyid" />
+          <data android:scheme="com.googleusercontent.apps.mykey" />
+        </intent-filter>
+      </activity>
+      <activity android:name=".DevSettingsActivity" />
+
+      <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="mykey"
+      />
+      <meta-data
+        android:name="com.facebook.sdk.ApplicationId"
+        android:value="@string/facebook_app_id"
+      />
+      <!-- NOTE: DISABLE CRASHLITICS -->
+      <meta-data
+        android:name="firebase_crashlytics_collection_enabled"
+        android:value="false"
+      />
+
+      <receiver
+        android:name="com.google.android.gms.gcm.GcmReceiver"
+        android:exported="true"
+        android:permission="com.google.android.c2dm.permission.SEND"
+      >
+        <intent-filter>
+          <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+          <category android:name="${applicationId}" />
+        </intent-filter>
+      </receiver>
+
+      <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationPublisher" />
+      <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationBootEventReceiver">
+        <intent-filter>
+          <action android:name="android.intent.action.BOOT_COMPLETED" />
+        </intent-filter>
+      </receiver>
+      <service android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationRegistrationService"/>
+      <service
+        android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationListenerService"
+        android:exported="false" >
+        <intent-filter>
+          <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+        </intent-filter>
+      </service>
+
+    </application>
+
+    <supports-screens
+      android:resizeable="true"
+      android:smallScreens="true"
+      android:normalScreens="true"
+      android:largeScreens="true"
+      android:xlargeScreens="true"
+      android:anyDensity="true"
+    />
+
+</manifest>
